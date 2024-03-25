@@ -1,0 +1,30 @@
+<ng-content>
+
+</ng-content>
+
+<div class="flex-container background">
+  <section class="main">
+    <app-input [itemQueVaiSerEditado]="itemParaSerEditado">
+    </app-input>
+    <div class="container">
+      <div class="lista">
+        <div class="header-lista">
+
+          <h4 class="title-list">Lista de Tarefas</h4>
+          <button mat-raised-button color="warn" class="btn-header" (click)="limparLista()">
+            <small>limpar lista</small></button>
+        </div>
+        <div *ngIf="listaDeTarefas.length != 0; else naoTemItem">
+
+          <div *ngFor="let item of listaDeTarefas">
+            <app-item [item]="item" (emitindoItemParaEditar)="editarItem($event)"
+              (emitiandoIdParaDeletar)="deletarItem($event)"></app-item>
+          </div>
+        </div>
+        <ng-template #naoTemItem>
+          <p class="semItem">não tem item na lista de tarefas</p>
+        </ng-template>
+      </div>
+    </div>
+  </section>
+</div>
