@@ -1,6 +1,5 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
-import { Item } from 'src/app/interfaces/item';
-import { ListaDeTarefasService } from 'src/app/service/lista.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-container',
@@ -8,33 +7,7 @@ import { ListaDeTarefasService } from 'src/app/service/lista.service';
   styleUrls: ['./container.component.scss'],
 })
 export class ContainerComponent implements OnInit {
-  listaDeTarefas!: Array<Item>;
-  itemParaSerEditado!: Item;
+  constructor() {}
 
-  constructor(private listaDeTarefasService: ListaDeTarefasService) {}
-
-  ngOnInit(): void {
-    this.listaDeTarefas = this.listaDeTarefasService.getListaDeItem();
-    // console.log(this.listaDeTarefas);
-  }
-
-  ngDoCheck(): void {
-    this.listaDeTarefasService.atualizarLocalStorage();
-  }
-
-  editarItem(item: Item) {
-    this.itemParaSerEditado = item;
-  }
-
-  deletarItem(id: number) {
-    const index = this.listaDeTarefas.findIndex((item) => {
-      item.id === id;
-    });
-    this.listaDeTarefas.splice(index, 1);
-  }
-
-  limparLista() {
-    this.listaDeTarefas = [];
-    this.listaDeTarefasService.limparLocalStorage();
-  }
+  ngOnInit(): void {}
 }

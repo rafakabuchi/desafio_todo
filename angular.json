@@ -57,7 +57,13 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -66,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "desafio-tecnico:build:production"
+              "buildTarget": "desafio-tecnico:build:production"
             },
             "development": {
-              "browserTarget": "desafio-tecnico:build:development"
+              "buildTarget": "desafio-tecnico:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "desafio-tecnico:build"
+            "buildTarget": "desafio-tecnico:build"
           }
         },
         "test": {

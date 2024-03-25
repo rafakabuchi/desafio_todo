@@ -1,0 +1,36 @@
+{
+  "tarefas": [
+    {
+      "id": "1",
+      "nome": "Lavar o carro"
+    },
+    {
+      "id": "2",
+      "nome": "Organizar a gaveta de meias"
+    },
+    {
+      "id": "3",
+      "nome": "Fazer uma caminhada de 30 minutos"
+    },
+    {
+      "id": "4",
+      "nome": "Ler um capítulo de um livro"
+    },
+    {
+      "id": "5",
+      "nome": "Aprender uma nova receita de culinária"
+    },
+    {
+      "id": "6",
+      "nome": "Escrever um poema"
+    },
+    {
+      "id": "7",
+      "nome": "Limpar a geladeira"
+    },
+    {
+      "id": "10",
+      "nome": "Fazer alongamentos por 10 minutos"
+    }
+  ]
+}

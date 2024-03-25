@@ -1,0 +1,32 @@
+<form class="add-item">
+  <input type="text" name="id" class="id" [(ngModel)]="id" disabled>
+  <input type="text" name="item" placeholder="Digite o item que deseja adicionar" [(ngModel)]="nome">
+  <button mat-raised-button color="primary" type="submit" (click)="cadastrarTarefa()"> {{ id ? 'Salvar' :
+    'Criar'}}</button>
+</form>
+
+<table>
+  <thead>
+    <th></th>
+    <th>Id</th>
+    <th>
+      <h4>Lista de Tarefas</h4>
+    </th>
+    <th> Ação </th>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let tarefa of tarefas$ | async" (click)="toggleColor($event)">
+      <td>
+        <input class="checkbox" type="checkbox" name="feito" id="feito">
+      </td>
+      <td> {{ tarefa.id }} </td>
+      <td id="itemNome"> {{ tarefa.nome }} </td>
+      <td>
+        <mat-icon class="delete-icon" (click)="remover(tarefa.id!)">delete</mat-icon>
+        <mat-icon class="edit-icon" (click)="preencherCampos(tarefa)">edit</mat-icon>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
